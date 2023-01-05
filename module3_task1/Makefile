@@ -10,5 +10,4 @@ post:		## Create a new blog post whose filename and title come from env var POST
 # -i option to edit file in place
 	sed -i 's/title: .*/title: "$(POST_TITLE)"/' content/posts/$(POST_NAME).md
 lint:
-	sudo apt install shellcheck
 	shellcheck setup.sh
