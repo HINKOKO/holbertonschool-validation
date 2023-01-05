@@ -1,4 +1,3 @@
-SHELLSHECK=shellcheck
 
 help: ## showing help documentation
 	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//'
@@ -11,4 +10,4 @@ post:		## Create a new blog post whose filename and title come from env var POST
 # -i option to edit file in place
 	sed -i 's/title: .*/title: "$(POST_TITLE)"/' content/posts/$(POST_NAME).md
 lint:
-	($SHELLSHECK) setup.sh >/dev/null 2>&1 || echo "Lint Failed"
+	shellcheck setup.sh
