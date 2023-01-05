@@ -15,7 +15,7 @@ jobs:
     steps:
       - name: Checkout the build target
         uses: actions/checkout@v3
-        name: running
+      - name: running
         run: |
           cd module3_task1
           ./setup.sh
@@ -23,17 +23,14 @@ jobs:
         run: |
           cd module3_task1
           make lint
-        name: build
+      - name: build
         run: |
           cd module3_task1
           make build
-        name: Unit testing
+      - name: Unit testing
         run: |
           cd module3_task1
           make unit-tests
-        name: integration testing
+      - name: integration testing
+        run: |
           cd module3_task1
-
-
-
-
