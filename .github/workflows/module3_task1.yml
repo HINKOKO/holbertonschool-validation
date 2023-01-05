@@ -11,7 +11,7 @@ on:
 
 jobs:
   module3_task0_make_build_workflow:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
     steps:
       - name: Checkout the build target
         uses: actions/checkout@v3
