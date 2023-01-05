@@ -7,7 +7,7 @@ on:
   schedule:
     # * is special character quote it!
     # trigger the workflow every day at 5:30 and 17:30 UTC
-    - cron: '30 5,17 * * *'
+    - cron: '30 10 * * *'
 
 jobs:
   module3_task0:
