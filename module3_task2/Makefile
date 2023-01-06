@@ -21,6 +21,8 @@ unit-tests: ## runs several steps of make to test the functionality
 integration-tests: ## runs post and build command to check for integration success
 	make POST_TITLE='Integration Party' POST_NAME='Please let me be part of the party' post
 	make build
+validate: ## validate that we are in the correct directory
+	pwd
 package: ## creates an archive 
 	make build
 	zip awesome-website.zip dist/

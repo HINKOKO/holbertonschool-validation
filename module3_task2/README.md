@@ -26,6 +26,7 @@
 - help: Display the documentation of all targets
 - unit-tests: Runs several make command, expected correct output
 - integration-tests: runs post and build to check for proper integration of new posts
+- validate: validate that we are in the correct folder
 
 ## **HELP Workflow**
 
