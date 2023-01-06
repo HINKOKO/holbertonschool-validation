@@ -36,7 +36,8 @@
   or at least once per day.
 - In this directory, we're going to configure automatic actions
   to be performed when something happen to the repository.
-- Using Github Actions to ensure CI/CL pipeline (build starts, TEST, BUILD, PUSH, DEPLOY)
+- Using Github Actions to ensure CI/CL pipeline
+  (build starts, TEST, BUILD, PUSH, DEPLOY)
 
 ==> help workflow test that help gets displayed
 
