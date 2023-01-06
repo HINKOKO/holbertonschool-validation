@@ -18,7 +18,7 @@ unit-tests: ## runs several steps of make to test the functionality
 	make clean
 
 integration-tests: ## runs post and build command to check for integration success
-	make POST_TITLE='Integration Party' POST_NAME='Please let me be part of the party' post
+	make POST_TITLE=IntegrationTest POST_NAME='Zanzibar' post
 	make build
 validate: ## validate that we are in the correct directory
 	pwd
