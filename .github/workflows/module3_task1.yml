@@ -27,6 +27,18 @@ jobs:
         run: |
           cd module3_task1
           make build
+      - name: post
+        run: |
+          cd module3_task2
+          make POST_TITLE=Test POST_NAME='TestSuccess' post
+      - name: integration testing
+        run: |
+          cd module3_task2
+          make validate
+          make integration-tests
+          make unit-tests
+          make package
+          make clean
       - name: Unit testing
         run: |
           cd module3_task1
