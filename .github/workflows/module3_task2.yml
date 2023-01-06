@@ -39,7 +39,7 @@ jobs:
           make unit-tests
           make package
           make clean
-      - name: build the archive
+      - name: build the archive if success
         # if none of previous steps have failed, success returns true
         if: ${{ success()}}
         uses: actions/upload-artifact@v3
