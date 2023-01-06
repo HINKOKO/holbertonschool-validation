@@ -1,5 +1,5 @@
 ---
-name: module3_task0
+name: module3_task2
 on:
   push:
     branches:
@@ -15,22 +15,34 @@ jobs:
     steps:
       - name: Checkout the build target
         uses: actions/checkout@v3
-      - name: running
+      - name: Setting hugo and build
         run: |
-          cd module3_task1
+          cd module3_task2
           ./setup.sh
       - name: lint
         run: |
-          cd module3_task1
+          cd module3_task2
           make lint
       - name: build
         run: |
-          cd module3_task1
+          cd module3_task2
           make build
       - name: Unit testing
         run: |
-          cd module3_task1
+          cd module3_task2
           make unit-tests
       - name: integration testing
         run: |
-          cd module3_task1
+          cd module3_task2
+          make validate
+          make integration_tests
+          make unit-tests
+          make package
+          make clean
+      - name: build the archive
+        # if none of previous steps have failed, success returns true
+        if: ${{ success()}}
+        uses: actions/upload-artifact@v3
+        with:
+          name: build package
+          path: module3_task2/awesome-website.zip
