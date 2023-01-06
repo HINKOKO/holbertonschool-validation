@@ -19,7 +19,8 @@
 
 ## **Lifecycle**
 
-- build: Generate the website from the markdown and configuration files in the directory `dist/`.
+- build: Generate the website from the markdown and configuration files
+  in the directory `dist/`.
 - clean: Cleanup the content of the directory `dist/`
 - post: Create a new blog post whose filename and title come from the
   environment variables `POST_TITLE` and `POST_NAME`.
@@ -31,8 +32,10 @@
 
 ## **HELP Workflow**
 
-- Triggering the workflow, each time new code is pushed to the repo, or at least once per day.
-- In this directory, we're going to configure automatic actions to be performed when something happen to the repository.
+- Triggering the workflow, each time new code is pushed to the repo,
+  or at least once per day.
+- In this directory, we're going to configure automatic actions
+  to be performed when something happen to the repository.
 - Using Github Actions to ensure CI/CL pipeline (build starts, TEST, BUILD, PUSH, DEPLOY)
 
 ==> help workflow test that help gets displayed
