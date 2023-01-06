@@ -30,7 +30,7 @@ jobs:
       - name: post
         run: |
           cd module3_task2
-          make POST_TITLE='Test' POST='TestSuccess' post
+          make POST_TITLE=Test POST_NAME='TestSuccess' post
       - name: Unit testing
         run: |
           cd module3_task2
