@@ -27,6 +27,7 @@
 - unit-tests: Runs several make command, expected correct output
 - integration-tests: runs post and build to check for proper integration of new posts
 - validate: validate that we are in the correct folder
+- package: compress archive `awesome-website.zip`
 
 ## **HELP Workflow**
 
