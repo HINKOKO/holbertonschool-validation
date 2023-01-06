@@ -9,9 +9,9 @@ post:		## Create a new blog post whose filename and title come from env var POST
 	hugo new content/posts/$(POST_NAME).md
 # -i option to edit file in place
 	sed -i 's/title: .*/title: "$(POST_TITLE)"/' content/posts/$(POST_NAME).md
-lint:
+lint: ## runs linter for .md file and shell script
 	markdownlint README.md DEPLOY.md
 	shellcheck setup.sh
-package:
+package: ## creates an archive 
 	make build
 	zip awesome-website.zip dist/
