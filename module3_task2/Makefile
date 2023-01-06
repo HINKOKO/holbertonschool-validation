@@ -12,6 +12,11 @@ post:		## Create a new blog post whose filename and title come from env var POST
 lint: ## runs linter for .md file and shell script
 	markdownlint README.md DEPLOY.md
 	shellcheck setup.sh
+
+unit-test: ## runs several steps of make to test the functionality
+	make POST_TITLE='Hot test' POST_NAME='what's love got to do with it?' post
+	make build
+	make clean
 package: ## creates an archive 
 	make build
 	zip awesome-website.zip dist/
