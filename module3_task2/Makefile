@@ -10,7 +10,6 @@ post:		## Create a new blog post whose filename and title come from env var POST
 # -i option to edit file in place
 	sed -i 's/title: .*/title: "$(POST_TITLE)"/' content/posts/$(POST_NAME).md
 lint: ## runs linter for .md file and shell script
-	sudo apt install markdownlint
 	markdownlint README.md DEPLOY.md
 	shellcheck setup.sh
 
