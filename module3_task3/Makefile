@@ -14,7 +14,7 @@ lint: ## runs linter for .md file and shell script
 	shellcheck setup.sh
 
 unit-tests: ## runs several steps of make to test the functionality
-	make POST_TITLE=IntegrationTest POST_NAME='Zanzibar' post
+	make POST_TITLE=IntegrationTestRel POST_NAME='Zanzibar2' post
 	make build
 	make clean
 
