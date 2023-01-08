@@ -2,7 +2,7 @@
 
 ## - What is in the archive and how to unarchive it?\*
 
-In the archive is compressed the binary awesome-api and the dist directory
+In the archive is compressed the binary awesome-api.zip and the dist directory.
 
 ## - What are the commands to start and stop the application?
 
@@ -15,3 +15,7 @@ Very good question dude !!
 ## - How to “quickly” verify that the application is running (healthcheck)?
 
 Check it out on local host
+
+## Releases
+
+New release is created with the awesome-website.zip archive, pointing to the tag 1.0.0
