@@ -14,12 +14,12 @@ lint: ## runs linter for .md file and shell script
 	shellcheck setup.sh
 
 unit-tests: ## runs several steps of make to test the functionality
+	make POST_TITLE=IntegrationTest POST_NAME='Zanzibar' post
 	make build
 	make clean
 
 integration-tests: ## runs post and build command to check for integration success
-	make POST_TITLE=IntegrationTest POST_NAME='Zanzibar' post
-	make build
+	ls dist/
 validate: ## validate that we are in the correct directory
 	pwd
 package: ## creates an archive 
