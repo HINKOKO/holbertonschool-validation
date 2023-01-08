@@ -18,4 +18,5 @@ Check it out on local host
 
 ## Releases
 
-New release is created with the awesome-website.zip archive, pointing to the tag 1.0.0
+New release is created with the awesome-website.zip archive,
+pointing to the tag 1.0.0
