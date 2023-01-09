@@ -17,7 +17,7 @@ jobs:
       # write permission required for auto-labeller
       # otherwise, read 'chmod' at least
       pull-requests: write
-    runs_on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       # Drafts your next release notes as pull requests
       - uses: release-drafter/release-drafter@v5
