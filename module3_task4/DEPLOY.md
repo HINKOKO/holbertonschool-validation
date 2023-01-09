@@ -23,4 +23,5 @@ pointing to the tag 1.0.0
 
 ## Release Drafter
 
-Automate the creation of a changelog for the release, based on the merge pull request title
+Automate the creation of a changelog for the release,
+based on the merge pull request title
