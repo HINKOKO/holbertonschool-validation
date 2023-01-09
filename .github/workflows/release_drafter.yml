@@ -1,32 +1,25 @@
-name-template: 'v$RESOLVED_VERSION 🌈'
-tag-template: 'vRESOLVED_VERSION'
-categories:
-  - title: 'Features'
-    labels:
-      - 'feature'
-      - 'enhancement'
-  - title: 'Bug fixes'
-    labels:
-      - 'fix'
-      - 'bugifx'
-      - 'bug'
-  - title: 'Maintenance'
-    labels: 'chore'
-change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
-change-title-escapes: '\<*_&'
-version-resolver:
-  major:
-    lables:
-      - 'major'
-  minor:
-    labels:
-      - 'minor'
-  patch:
-    labels:
-      - 'patch'
-  default: patch
-template: |
-  ## Changes
+name: release_drafter
+on:
+  push:
+    branches: main
+  # pull request event is required
+  pull_request:
+    types: [opened, reopened, synchronize]
 
+permissions:
+  contents: read
 
-  $CHANGES
+jobs:
+  update_release_draft:
+    permissions:
+      # write permission is required to create a github release
+      contents: write
+      # write permission required for auto-labeller
+      # otherwise, read 'chmod' at least
+      pull-requests: write
+    runs_on: ubuntu-latest
+    steps:
+      # Drafts your next release notes as pull requests
+      - uses: release-drafter/release-drafter@v5
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
