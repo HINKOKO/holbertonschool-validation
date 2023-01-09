@@ -14,7 +14,7 @@ lint: ## runs linter for .md file and shell script
 	shellcheck setup.sh
 
 unit-tests: ## runs several steps of make to test the functionality
-	make POST_TITLE=TestPull POST_NAME='pulling test' post
+	make POST_TITLE=TestPull POST_NAME='pullTest' post
 	make build
 	make clean
 
