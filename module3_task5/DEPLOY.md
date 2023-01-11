@@ -25,3 +25,7 @@ pointing to the tag 1.0.0
 
 Automate the creation of a changelog for the release,
 based on the merge pull request title
+
+## Release on Netlify
+
+When workflow gets triggered by Pull Request, deploy step is done on a preview site, automatically provides the preview site's URL
