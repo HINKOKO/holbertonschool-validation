@@ -28,4 +28,6 @@ based on the merge pull request title
 
 ## Release on Netlify
 
-When workflow gets triggered by Pull Request, deploy step is done on a preview site, automatically provides the preview site's URL
+When workflow gets triggered by Pull Request,
+deploy step done on a preview site
+automatically provides the preview site's URL
