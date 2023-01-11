@@ -1,5 +1,5 @@
 #!/bin/bash
-apt-get update && apt-get install -y hugo make wget
+apt-get update && apt-get install -y hugo make wget npm
 
 # fixing the recipe for 'build' target fail
 # getting latest release of 'hugo'
