@@ -1,4 +1,5 @@
 #!/bin/bash
+apt-get update && apt-get install -y hugo make wget
 
 # fixing the recipe for 'build' target fail
 # getting latest release of 'hugo'
