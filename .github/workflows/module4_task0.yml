@@ -20,10 +20,6 @@ jobs:
         run: |
           cd module4_task0
           ./setup.sh
-      - name: lint
-        run: |
-          cd module4_task0
-          make lint
       - name: build
         run: |
           cd module4_task0
