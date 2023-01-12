@@ -18,9 +18,11 @@ unit-tests: ## runs several steps of make to test the functionality
 	make POST_TITLE=GoNotGo POST_NAME='GoOrNot' post
 	make build
 	make clean
+	touch ./coverage-units.out
 
 integration-tests: ## runs post and build command to check for integration success
 	ls dist/
+	touch ./coverage-integrations.out
 validate: ## validate that we are in the correct directory
 	pwd
 package: ## creates an archive 
