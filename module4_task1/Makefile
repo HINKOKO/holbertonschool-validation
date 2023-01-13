@@ -30,4 +30,4 @@ package: ## creates an archive
 	zip awesome-website.zip dist/
 
 build-docker: ## build the docker image named awesome-build
-	docker build awesome-build ./build
+	docker build -t awesome-build ./build/Dockerfile
