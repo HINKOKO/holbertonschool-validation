@@ -1,0 +1,72 @@
+---
+name: module4_task1
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    # * is special character quote it!
+    # trigger the workflow every day at 5:30 and 17:30 UTC
+    - cron: '30 10 * * *'
+  pull_request:
+    types: [opened, reopened, edited, ready_for_review]
+jobs:
+  module4_task1_make_build_workflow:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Checkout the build target
+        uses: actions/checkout@v3
+      - name: Setting hugo and build
+        run: |
+          cd module4_task1
+          ./setup.sh
+      - name: build
+        run: |
+          cd module4_task1
+          make build
+      - name: post
+        run: |
+          cd module4_task1
+          make POST_TITLE=TestRelease POST_NAME='TestSuccessRelease' post
+      - name: integration testing
+        run: |
+          cd module4_task1
+          make validate
+          make integration-tests
+          make unit-tests
+          make package
+          make clean
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: 1.0.1
+          files: |
+            module4_task1/awesome-website.zip
+            module4_task1/DEPLOY.md
+      - name: build the archive
+        # if none of previous steps have failed, success returns true
+        if: ${{ success()}}
+        uses: actions/upload-artifact@v3
+        with:
+          name: build package
+          path: module4_task1/awesome-website.zip
+
+      - name: docker build
+        run: |
+          docker run -t
+
+      - name: deploy
+        uses: nwtgck/actions-netlify@v1.2
+        with:
+          publish-dir: './module4_task1/dist'
+          production-branch: main
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-message: '🚀 Deployed on'
+          publish-message: '🎉 Published on'
+          enable-pull-request-comment: true
+          enable-commit-comment: true
+          overwrites-pull-request-comment: true
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        timeout-minutes: 1
