@@ -2,15 +2,15 @@ FROM golang:1.15.8-buster
 
 WORKDIR /app
 
-COPY go.mod ./
-COPY go.sum ./
-
-# COPY . .
+ADD go.mod go.sum ./
+# COPY go.mod ./
+# COPY go.sum ./
 
 RUN go mod download
 
-COPY *.go ./
+# COPY *.go ./
+COPY . .
 
-RUN go build -o /docker-gs-ping
+RUN go build -o ./bin/avatar .
 
-CMD [ "/docker-gs-ping" ]
+# CMD [ "/docker-gs-ping" ]
