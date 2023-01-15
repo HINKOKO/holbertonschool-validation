@@ -29,7 +29,7 @@ Python 3 with pip module
 - Understand that not only “classical” code is to be tested, but also a lot of the artifacts we can generate
 - Understand how “component”-based testing for acceptance and end to end validation is to be used
 
-# **Makefile Targets**
+# **Lifecycle- using makefile Targets**
 
 - Target build: compile source code of the application to a binary executable
 - Target run: run the app in the background
