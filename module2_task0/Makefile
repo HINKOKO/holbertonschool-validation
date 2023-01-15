@@ -4,7 +4,7 @@ build: ## build: compile source code of application to a binary
 run: ## run: Run the app in background by executing the binary
 	./awesome-api >./awesome.log 2>&1 &
 stop: ## stop: stop the application using shell command "kill"
-	sudo kill "$(pgrep awesome-api)"
+	pgrep awesome-api | xargs kill
 clean: ## clean: Delete the binary and the log file
 	rm awesome-api
 	rm awesome-api.log
