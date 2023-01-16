@@ -1,0 +1,6 @@
+schemaVersion: '2.0.0'
+fileExistenceTests:
+  - name: 'plougins'
+    path: '/usr/share/jenkins/ref/plugins/'
+    shouldExist: true
+
