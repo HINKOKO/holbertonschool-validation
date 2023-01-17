@@ -1,4 +1,5 @@
 lint: ## linting the golang code, if failure build shouldn't run
+	curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint:master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.50.1
 	golangci-lint run
 build: ## build: compile source code of application to a binary
 	make lint
