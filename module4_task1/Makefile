@@ -11,6 +11,7 @@ post:		## Create a new blog post whose filename and title come from env var POST
 # -i option to edit file in place
 	sed -i 's/title: .*/title: "$(POST_TITLE)"/' content/posts/$(POST_NAME).md
 lint: ## runs linter for .md file and shell script
+	npm install -g markdownlint-cli 1>&2
 	markdownlint README.md DEPLOY.md
 	shellcheck setup.sh
 
@@ -30,4 +31,4 @@ package: ## creates an archive
 	zip awesome-website.zip dist/
 
 build-docker: ## build the docker image named awesome-build
-	docker image build -t awesome:build -f build/Dockerfile .
+	docker image build -t "awesome:build" -f build/Dockerfile .
