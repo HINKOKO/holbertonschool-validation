@@ -53,8 +53,12 @@ jobs:
 
       - name: docker build
         run: |
-          docker run -t
-
+          make build
+          make unit-tests
+          make integration-tests
+          make validate
+          make build-docker
+          make package
       - name: deploy
         uses: nwtgck/actions-netlify@v1.2
         with:
