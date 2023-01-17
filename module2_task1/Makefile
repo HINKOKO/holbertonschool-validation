@@ -1,4 +1,4 @@
-lint: # linting the golang code, if failure build shouldn't run
+lint: ## linting the golang code, if failure build shouldn't run
 	golangci-lint run
 build: ## build: compile source code of application to a binary
 	make lint
