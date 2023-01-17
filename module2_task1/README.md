@@ -31,6 +31,7 @@ Python 3 with pip module
 
 # **Lifecycle- using makefile Targets**
 
+- Target lint: lint the golang code, if fails build don't run
 - Target build: compile source code of the application to a binary executable
 - Target run: run the app in the background
 - Target stop: stop the application using kill
