@@ -1,5 +1,5 @@
+## curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s v1.50.1
 lint: ## linting the golang code, if failure build shouldn't run
-	curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s v1.50.1
 	golangci-lint run
 build: ## build: compile source code of application to a binary
 	go mod init github.com/HINKOKO/awesome-api
