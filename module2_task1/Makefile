@@ -2,7 +2,7 @@
 lint: ## linting the golang code, if failure build shouldn't run
 	golangci-lint run
 build: ## build: compile source code of application to a binary
-	go mod init github.com/HINKOKO/awesome-api
+	make lint >/dev/null 2>&1 && go mod init github.com/HINKOKO/awesome-api
 	go build
 run: ## run: Run the app in background by executing the binary
 	./awesome-api >./awesome.log 2>&1 &
