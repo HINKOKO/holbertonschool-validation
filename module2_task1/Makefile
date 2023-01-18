@@ -11,7 +11,7 @@ stop: ## stop: stop the application using shell command "kill"
 clean: ## clean: Delete the binary and the log file
 	make stop
 	rm -rf awesome-api
-	rm awesome.log
+	rm awesome.log >/dev/null 2>&1 &
 test: ## test: run tests to ensure it behaves as expected
 	curl http://localhost:9999
 	curl http://localhost:9999/health
