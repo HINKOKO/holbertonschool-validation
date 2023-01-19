@@ -66,7 +66,7 @@ func HelloHandler(w http.ResponseWriter, r *http.Request) {
   
 	// Set a default value if the name is empty
 	if queryParams["name"] != nil && name == "" {
-		r.WriteHeader(400)
+		w.WriteHeader(400)
 		return
 	}
   
