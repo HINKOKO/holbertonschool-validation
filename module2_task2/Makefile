@@ -16,7 +16,7 @@ test: ## test: run tests to ensure it behaves as expected
 	curl http://localhost:9999
 	curl http://localhost:9999/health
 unit-tests: ## unit-tests: execute golang unit tests
-	go test -v -short -coverprofile=coverage-units.out
+	@go test -v -short -coverprofile=coverage-units.out
 help: ## help: display help for this Makefile
 	cat Makefile | grep '##' | tr -d '##' | head -n -1
 
