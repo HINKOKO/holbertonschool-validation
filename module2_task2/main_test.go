@@ -49,7 +49,7 @@ func Test_HelloHandler(t *testing.T) {
     },
     {
       name:         "finalSword",
-      queryString:   "nope",
+      queryString:   "name",
       responseCode:   400,
     },
   }
